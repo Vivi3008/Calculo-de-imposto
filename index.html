@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="estilo.css"/>
+<title>Cálculo de imposto</title>
+</head>
+
+<body id="corpo">
+
+<div id="centro">
+<h2>Cálculo de Base Icms e Icms</h2>
+
+<label for="vr">Valor da NF:</label>
+<input type="text" name="vr" id="vr" onfocus="" >
+
+<p>
+<input type="radio" name="tipo" id="dev" checked>
+<label for="dev">Devolução</label>
+<input type="radio" name="tipo" id="gar" >
+<label for="gar">Garantia</label>
+</p>
+<input type="submit" value ="Calcular" id="botao" >
+
+<div id="res"></div>
+
+
+    
+<span id="footer">by Vivi Ramos</span>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
