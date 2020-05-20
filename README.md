@@ -1,2 +1,2 @@
-# calculo-de-imposto
- Aplicação simples para cálculo de base de icms e valor de icms de uma nota fiscal a partir de seu valor total.
+Calculo de imposto
+ Aplicação simples que fiz para calcular a base de icms e valor de icms de uma produto a partir do seu valor. Uso sempre para tirar notas de garantia ou devolução.
