@@ -1,44 +1,76 @@
-var btn = document.querySelector('input#botao')
+var btn = document.querySelector('button')
 var input = document.querySelector('input#vr')
 var div = document.querySelector('div#res')
-let radio =  document.getElementsByName('tipo')
+let container = document.querySelector('section#container')
+const h2 = document.querySelector('header h2')
+
+//modo dark
+const range = document.querySelector('input#dark')
+
+const initialColors = {
+  bg: "#cecece" ,
+  title: "#e0841c",
+  box: "white",
+  txt: "rgba(0, 0, 0, 0.589)",
+}
+
+const darkMode = {
+  bg: "#131111",
+  title: "#e9912d" ,
+  box: "rgba(180, 176, 176, 0.685)",
+  txt: "white",
+}
+
+function changeColors(colors){
+    window.document.body.style.backgroundColor = colors.bg
+    container.style.backgroundColor = colors.box
+    h2.style.color = colors.title
+    document.querySelector('label').style.color = colors.txt
+    document.querySelector('footer a').style.color = colors.txt
+   
+}
+
+range.addEventListener('change', (event)=>{
+  event.target.value == 1 ? changeColors(darkMode) : changeColors(initialColors) 
+})
+
+
+//calculo do imposto
 
 btn.addEventListener('click',calcular)
 input.addEventListener('click',limpar)
 
 
-/*o codigo abaixo adiciona o evento keypress e chama a funcao e
-essa funcao verifica se a tecla pressionada é enter e se 
-for enter chama a funcao calcular*/
-document.addEventListener('keypress',function(e){//
-  if (e.which==13) {//
+document.addEventListener('keypress', (e) => {
+  if (e.which==13) {
     calcular();
   }else{
     false
   }
 })
-//funcao para calcular a base icms e o valor icms 
+
+
 function calcular(){
  
- var valor = Number((input.value).replace(',','.'))
+ let valor = Number((input.value).replace(',','.'))
 
- var base=valor*(64.71/100)
- var icms= base*(17/100)
- 
- div.innerHTML=`Base Icms: <strong>${base.toFixed(3).replace('.',',')}</strong>
-    Valor Icms: <strong>${icms.toFixed(3).replace('.',',')}</strong>`
-    
-  if (radio[0].checked) {
-      div.innerHTML+='<p>CFOP <strong>6202</strong></p>'
-  } else if(radio[1].checked){
-      div.innerHTML+='<p>CFOP <strong>5949</strong></p>'
-  }
+ let base = (valor*0.6471)
+
+ let icms = (base*0.17)
+
+
+  div.classList.add('appear')
+  div.innerHTML=`<p>Base Icms: <strong>${base.toFixed(3).replace('.',',')}</strong></p>
+    <p>Valor Icms: <strong>${icms.toFixed(3).replace('.',',')}</strong></p>
+    <p>CFOP Devolução: <strong>6202</strong></p>
+    <p>CFOP Garantia: <strong>5949</strong>` 
 }
-//a função abaixo limpa o valor do input quando é clicado
+
+
 function limpar(){
-    if (input!='') {
-         this.value=''
-         div.innerHTML=`Base Icms: <strong>0</strong>  Valor Icms:<strong> 0</strong>` 
-  
-    }
+  if (input != '') {
+       this.value=''
+       div.classList.remove('appear')
+       div.innerHTML = ""
+  }
 }

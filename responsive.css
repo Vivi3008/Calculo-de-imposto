@@ -1,0 +1,36 @@
+/* quando o tamanho do width for no maximo 768px */
+@media (max-width:768px){
+  
+  body{
+    font-size: 12pt;
+  }
+
+  img{
+    width: 130px;
+    height: 70px;
+  }
+
+  h2{
+    font-size: 16pt;
+  }
+
+  #container{
+    width: 50%;
+  }
+
+} 
+
+/* quando o tamanho do width for no maximo 425px */
+@media(max-width:425px){
+img{
+    width: 100px;
+    height: 50px;
+  }
+  h2{
+      font-size: 12pt;
+      text-align: center;
+  }
+  #container{
+    width: 60%;
+  }
+}

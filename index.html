@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilo.css"/>
+     <link rel="stylesheet" href="responsive.css"/>
+    <title>Cálculo de imposto</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="estilo.css"/>
-<title>Cálculo de imposto</title>
-</head>
+  <body>
 
-<body id="corpo">
+    <div class="range">
+      <label for="dark" >Dark mode</label>
+     <input type="range" min="0" max="1" id="dark" value="0">
+    </div>  
 
-<div id="centro">
-<h2>Cálculo de Base Icms e Icms</h2>
+    <section id="container">
 
-<label for="vr">Valor da NF:</label>
-<input type="text" name="vr" id="vr" onfocus="" >
+      <header>
+        <a href="http://portalautopecas.com.br" target="_blank"><img src="logo-portal.png" alt="Logo Portal Peças"></a>
+        <h2>Cálculo de ICMS</h2>
+      </header>
 
-<p>
-<input type="radio" name="tipo" id="dev" checked>
-<label for="dev">Devolução</label>
-<input type="radio" name="tipo" id="gar" >
-<label for="gar">Garantia</label>
-</p>
-<input type="submit" value ="Calcular" id="botao" >
+      <div class="field">
 
-<div id="res"></div>
+        <label for="vr">Valor</label>
+        <input type="number" name="vr" id="vr" placeholder="R$">
 
+        <button>Calcular</button>
 
+      </div>
+       
+  <br>  
     
-<span id="footer">by Vivi Ramos</span>
-</div>
+<div id="res"></div>
+    </section>
 
-<script src="main.js"></script>
-</body>
+<footer><a href="https://github.com/vivi3008" target="_blank">by&copy;ViviRamos</a></footer>
+
+    <script src="main.js"></script>
+  </body>
 </html>

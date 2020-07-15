@@ -1,41 +1,143 @@
 @charset "UTF-8";
+:root{
+  --base: #cecece;
+  --title:#e0841c;
+  --box: white;
+  --input:#cecece;
+  
+}
+
 
 body{
-  background-color: #212dcf9f;
-  font-family: normal 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 16pt;
+  box-sizing: border-box;
+  background-color: var(--base);
+  font-family: sans-serif;
+  font-size: 14pt;
+
+}
+
+a{
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.589);
+}
+
+header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+img{
+  width: 200px;
+  height: 100px;
 }
 
 h2{
-  font-family: sans-serif;
+  text-align: center;
   font-size: 18pt;
-  color:#ffffff;
-  text-shadow: 2px 2px 2px black;
-}
-span#footer{
-  font-size:8pt;
-  margin-right: 0px;
-  text-shadow: 1px 1px 1px black;
-  color:#ffffff;
+  color:var(--title);
 }
 
-div#centro{
-   margin: 100px auto auto auto;
-   width:500px;
-   background-color: #63a7a1;
-   padding: 10px;
-   box-shadow: 1px 1px 5px black;
+.range{
+  display: flex;
+  align-items: center;
+  
+}
+.range input {
+   width: 25px;
+   margin: 0;
+   padding: 0;
+   
+}
+.range label{
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 5px;
+  color:rgba(0, 0, 0, 0.589);
+}
+
+#container{
+
+   margin: 50px auto;
+   width:30%;
+   background-color:var(--box);
+   padding: 30px;
+   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.397);
    border-radius: 10px;
 }
+
+.field{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+
+label{
+  font-size: 0.001px;
+}
+
 input{
-	font-family:sans-serif;
+  margin-top: 10px;
+  width: 150px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
 	font-size:13pt;
-	background-color:rgba(255,255,255,.8);
+	background-color:var(--input);
 }
+
 input:hover{
-  background-color:#dddddd;
-  transition:2s;
+  background-color:rgba(179, 177, 177, 0.89) ;
+  transition: 500ms;
 }
-div#res{
-  margin-top:20px;
+
+button{
+  margin-top: 20px;
+  font-weight: bold;
+  width: 130px;
+  padding: 7px;
+  background:var(--box);
+  border: none;
+  box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.253);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #c5b5b5;
+  transition: 500ms;
+}
+
+p{
+  line-height: 10px;
+}
+
+footer{
+  font-size: 13px;
+  text-align: right;
+  color:rgba(0, 0, 0, 0.589);
+}
+
+/* APARIÇAO DO CONTAINER com animação */
+#container{
+  animation-name: fade;
+  animation-duration: 1s;
+}
+.appear{
+  display: block;
+  animation-name: fade;
+  animation-duration: 500ms;
+}
+
+@keyframes fade {
+  from{
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1)
+  }
 }
