@@ -38,16 +38,13 @@ range.addEventListener('change', (event)=>{
 //calculo do imposto
 
 btn.addEventListener('click',calcular)
+
 input.addEventListener('click',limpar)
 
 
-document.addEventListener('keypress', (e) => {
-  if (e.which==13) {
-    calcular();
-  }else{
-    false
-  }
-})
+ document.addEventListener('keypress', (e) => {
+  if (e.key==="Enter")  calcular();
+}) 
 
 
 function calcular(){
